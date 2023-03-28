@@ -17,6 +17,7 @@ function App() {
     } else {
       setLogin(false);
     }
+    setLoading(false);
   }, []);
   // useEffect(() => {
   //   var element = document.getElementById("otpless");
@@ -38,7 +39,6 @@ function App() {
       localStorage.setItem("login", true);
       setUser({ name: waName, phoneNumber: waNumber });
       setLogin(true);
-      setLoading(false);
     };
   }, []);
 
