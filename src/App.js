@@ -29,6 +29,12 @@ function App() {
       window.location.href = "/";
     };
   }, []);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    setLogin(false);
+    setUser({ name: "", phoneNumber: "" });
+  };
   console.log(user);
   return (
     <div className="App">
@@ -36,7 +42,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Demo App</p>
         <div>
-          <div> Hello, User !</div>
+          <div> Hello, {!login ? "User" : user.name} !</div>
           {login ? (
             <div style={{ marginTop: 40 }}>
               <div>
@@ -45,8 +51,14 @@ function App() {
                   src="https://img.icons8.com/nolan/256/user-default.png"
                 />
               </div>
-              <div>Name: </div>
-              <div>Phone Number: </div>
+              <div>Name: {user.name} </div>
+              <div>Phone Number: {user.phoneNumber} </div>
+              <div
+                style={{ textDecoration: "underline" }}
+                onClick={handleLogout}
+              >
+                Logout
+              </div>
             </div>
           ) : (
             <div className="m-button">Login</div>
