@@ -9,12 +9,15 @@ function App() {
 
   useEffect(() => {
     const login = localStorage.getItem("login");
-    const user = JSON.parse("user");
+    const user = JSON.parse(localStorage.getItem("user"));
     console.log(login);
     if (login) {
       setLogin(true);
       setUser(user);
     } else {
+      setTimeout(() => {
+        localStorage.clear();
+      }, 3000);
       setLogin(false);
     }
     setLoading(false);
