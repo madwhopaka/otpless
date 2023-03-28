@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const login = localStorage.getItem("login");
-    const user = JSON.stringify("user");
+    const user = JSON.parse("user");
     console.log(login);
     if (login) {
       setLogin(true);
@@ -35,7 +35,10 @@ function App() {
     window.otpless = (otplessUser) => {
       const waName = otplessUser.waName;
       const waNumber = otplessUser.waNumber;
-      localStorage.setItem("user", { name: waName, phoneNumber: waNumber });
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ name: waName, phoneNumber: waNumber })
+      );
       localStorage.setItem("login", true);
       setUser({ name: waName, phoneNumber: waNumber });
       setLogin(true);
@@ -49,7 +52,7 @@ function App() {
     window.location.reload(true);
     window.sessionStorage.clear();
   };
-  console.log(user);
+
   return (
     <div className="App">
       <header className="App-header">
