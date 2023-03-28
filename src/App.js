@@ -23,6 +23,7 @@ function App() {
       const waName = otplessUser.waName;
       const waNumber = otplessUser.waNumber;
       setUser({ name: waName, phoneNumber: waNumber });
+      setLogin(true);
       // Handle the signup/signin process
       // dispatch(loginSuccess({ fullName: waName, password: waNumber }));
       window.location.href = "/";
