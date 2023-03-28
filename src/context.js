@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const MyContext = React.createContext();
 
 function AuthProvider(props) {
-  const [user, setUser] = useState({ name: "", phoneNumber: "" });
+  const [user, setUser] = useState({});
   const [login, setLogin] = useState(false);
 
   return (

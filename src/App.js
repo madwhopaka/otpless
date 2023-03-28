@@ -55,12 +55,7 @@ function App() {
               </div>
               <div>Name: {user.name} </div>
               <div>Phone Number: {user.phoneNumber} </div>
-              <div
-                style={{ textDecoration: "underline" }}
-                onClick={handleLogout}
-              >
-                Logout
-              </div>
+              <div style={{ textDecoration: "underline" }}>Logout</div>
             </div>
           ) : (
             <div className="m-button">Login</div>
