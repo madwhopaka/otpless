@@ -38,6 +38,7 @@ function App() {
       localStorage.setItem("login", true);
       setUser({ name: waName, phoneNumber: waNumber });
       setLogin(true);
+      setLoading(false);
     };
   }, []);
 
