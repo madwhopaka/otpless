@@ -49,6 +49,13 @@ function App() {
   }, []);
 
   const handleLogout = () => {
+    const scripts = document.getElementsByTagName("script");
+    for (let i = 0; i < scripts.length; i++) {
+      if (scripts[i].src.includes("otpless.com/auth.js")) {
+        scripts[i].parentNode.removeChild(scripts[i]);
+        break;
+      }
+    }
     localStorage.clear();
     setLogin(false);
     setUser({ name: "", phoneNumber: "" });
