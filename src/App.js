@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const login = localStorage.getItem("login");
-    const user = localStorage.getItem("user");
+    const user = JSON.stringify("user");
     console.log(login);
     if (login) {
       setLogin(true);
@@ -70,7 +70,12 @@ function App() {
                 </div>
                 <div>Name: {user.name} </div>
                 <div>Phone Number: {user.phoneNumber} </div>
-                <div style={{ textDecoration: "underline" }}>Logout</div>
+                <div
+                  style={{ textDecoration: "underline", cursor: "pointer" }}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </div>
               </div>
             ) : (
               <div className="m-button">Login</div>
