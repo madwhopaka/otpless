@@ -34,6 +34,8 @@ function App() {
     localStorage.clear();
     setLogin(false);
     setUser({ name: "", phoneNumber: "" });
+    window.location.reload(true);
+    window.sessionStorage.clear();
   };
   console.log(user);
   return (
