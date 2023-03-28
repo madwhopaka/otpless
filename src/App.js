@@ -52,6 +52,7 @@ function App() {
     const scripts = document.getElementsByTagName("script");
     for (let i = 0; i < scripts.length; i++) {
       if (scripts[i].src.includes("otpless.com/auth.js")) {
+        console.log(scripts[i]);
         scripts[i].parentNode.removeChild(scripts[i]);
         break;
       }
