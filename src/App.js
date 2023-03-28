@@ -55,7 +55,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Demo App</p>
-        {loading ? (
+        {loading == true ? (
           <div>Loading</div>
         ) : (
           <div>
